@@ -1,28 +1,4 @@
 # Crypto Price Tracker
-
-A simple web app to track live cryptocurrency prices using the CoinGecko API, built with Next.js, React Query, and Tailwind CSS.
-
-## Features
-- Displays prices for Bitcoin (BTC), Ethereum (ETH), Solana (SOL), Polygon (MATIC), and Dogecoin (DOGE).
-- Shows name, symbol, current price (USD), and 24-hour price change (%).
-- Highlights price changes: green for positive, red for negative.
-- Auto-refreshes data every 30 seconds.
-- **Bonus**: Search by name/symbol, sort by 24h change, and loading/error states.
-- Responsive design for mobile and desktop.
-
-## Setup Instructions
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/your-username/crypto-price-tracker.git
-   cd crypto-price-tracker
-
-
-
-
-
-
-
-# Crypto Price Tracker
 A sleek, responsive web app to track live cryptocurrency prices using the CoinGecko API, built with Next.js, React Query, and Tailwind CSS.
 
 ## Features
@@ -38,9 +14,8 @@ A sleek, responsive web app to track live cryptocurrency prices using the CoinGe
 Clone the repository
 ```bash
 git clone https://github.com/jerydam/crypto-price-tracker.git
-```
 cd crypto-price-tracker
-
+```
 
 Install dependencies
 ```bash
