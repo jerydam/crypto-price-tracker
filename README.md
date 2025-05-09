@@ -1,36 +1,74 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Crypto Price Tracker
 
-## Getting Started
+A simple web app to track live cryptocurrency prices using the CoinGecko API, built with Next.js, React Query, and Tailwind CSS.
 
-First, run the development server:
+## Features
+- Displays prices for Bitcoin (BTC), Ethereum (ETH), Solana (SOL), Polygon (MATIC), and Dogecoin (DOGE).
+- Shows name, symbol, current price (USD), and 24-hour price change (%).
+- Highlights price changes: green for positive, red for negative.
+- Auto-refreshes data every 30 seconds.
+- **Bonus**: Search by name/symbol, sort by 24h change, and loading/error states.
+- Responsive design for mobile and desktop.
 
+## Setup Instructions
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/crypto-price-tracker.git
+   cd crypto-price-tracker
+
+
+
+
+
+
+
+# Crypto Price Tracker
+A sleek, responsive web app to track live cryptocurrency prices using the CoinGecko API, built with Next.js, React Query, and Tailwind CSS.
+
+## Features
+- Tracks Bitcoin (BTC), Ethereum (ETH), Solana (SOL), Polygon (MATIC), and Dogecoin (DOGE).
+- Displays name, symbol, current price (USD), and 24-hour price change (%).
+- Highlights price changes: green for positive, red for negative.
+- Auto-refreshes every 30 seconds.
+- Includes search by name/symbol, sort by 24h change, and loading/error states.
+
+
+## Setup Instructions
+
+Clone the repository
+```bash
+git clone https://github.com/jerydam/crypto-price-tracker.git
+```
+cd crypto-price-tracker
+
+
+Install dependencies
+```bash
+npm install
+```
+Run the development server
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+Open http://localhost:3000 in your browser.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Project Structure
 
-## Learn More
+- app/page.jsx: Main page rendering the tracker UI with search and sort controls.
+- components/CryptoList.jsx: Fetches and filters coin data, displays cards in a responsive grid.
+- components/CryptoCard.jsx: Renders individual coin details with styled price changes.
+- components/SearchBar.jsx: Handles search input for filtering coins.
+- hooks/useCryptoPrices.js: Custom React Query hook for fetching and auto-refreshing data.
+- app/globals.css & tailwind.config.js: Defines cool color palette and responsive styling.
 
-To learn more about Next.js, take a look at the following resources:
+## Design Decisions
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+React Query: Simplifies data fetching, caching, and 30-second auto-refresh. Handles loading/error states for robust UX.
+Tailwind CSS: Enables rapid, mobile-first styling.
+JSX/JavaScript: Uses plain JavaScript for compatibility.
+Responsive Design: Grid scales from 1 column (mobile) to 3 columns (desktop). Fluid typography and padding enhance readability.
+Modular Code: Separates concerns into components and hooks for maintainability and reusability.
+CoinGecko API: Chosen for reliability and free tier. Fetches 5 coins efficiently, with search/sort on client-side.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
