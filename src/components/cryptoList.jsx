@@ -5,19 +5,11 @@ export default function CryptoList({ searchTerm, sortByChange }) {
   const { data, isLoading, error } = useCryptoPrices();
 
   if (isLoading) {
-    return (
-      <div className="flex justify-center">
-        <div className="spinner"></div>
-      </div>
-    );
+    return <div className="text-center">Loading...</div>;
   }
 
   if (error) {
-    return (
-      <div className="text-center text-red-negative bg-dark-purple p-4 rounded-lg">
-        Error: {error.message}
-      </div>
-    );
+    return <div className="text-center text-red-500">Error: {error.message}</div>;
   }
 
   const defaultCoins = ["bitcoin", "ethereum", "solana", "matic-network", "dogecoin"];
@@ -35,13 +27,11 @@ export default function CryptoList({ searchTerm, sortByChange }) {
   }
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
       {filteredCoins?.length ? (
         filteredCoins.map((coin) => <CryptoCard key={coin.id} coin={coin} />)
       ) : (
-        <div className="col-span-full text-center text-light-gray">
-          No coins found
-        </div>
+        <div className="col-span-full text-center">No coins found</div>
       )}
     </div>
   );
